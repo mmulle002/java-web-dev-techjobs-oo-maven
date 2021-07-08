@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class PositionType {
     private static int nextId = 1;
 
@@ -14,6 +16,25 @@ public class PositionType {
     public PositionType(String value) {
         this();
         this.value = value;
+    }
+
+
+    @Override
+    public String toString() { //added
+        return this.value;
+    }
+
+    @Override
+    public boolean equals(Object o) { //added
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PositionType that = (PositionType) o;
+        return id == that.id && Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {   //added
+        return Objects.hash(id, value);
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
