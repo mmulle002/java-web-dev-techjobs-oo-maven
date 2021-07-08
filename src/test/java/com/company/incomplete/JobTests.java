@@ -12,9 +12,7 @@ import org.junit.jupiter.api.Test;
 
 public class JobTests {
 
-
     static Job job1, job2, jobInfo, jobTestInfo;
-
 
     @BeforeAll
     static void Job() {
